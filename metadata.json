@@ -1,0 +1,7 @@
+{
+  "name": "Bayan AI - Human-Crafted Arabic Chat Interface",
+  "description": "A bespoke, production-grade AI chat interface inspired by Google Gemini with native Arabic RTL typography, clean document-canvas reading layout, and thoughtful micro-interactions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

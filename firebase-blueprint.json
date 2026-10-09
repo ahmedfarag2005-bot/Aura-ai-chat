@@ -1,0 +1,41 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile record created upon authentication.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "Unique user ID from Firebase Auth." },
+        "email": { "type": "string", "description": "User email address." },
+        "displayName": { "type": "string", "description": "User full display name." },
+        "photoURL": { "type": "string", "description": "User avatar photo URL." },
+        "createdAt": { "type": "number", "description": "Timestamp of account creation." }
+      },
+      "required": ["uid", "email"]
+    },
+    "Conversation": {
+      "title": "Conversation",
+      "description": "Chat session owned by an authenticated user.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique conversation ID." },
+        "userId": { "type": "string", "description": "Owner user ID." },
+        "title": { "type": "string", "description": "Conversation title." },
+        "createdAt": { "type": "number", "description": "Creation timestamp." },
+        "updatedAt": { "type": "number", "description": "Last update timestamp." },
+        "isPinned": { "type": "boolean", "description": "Whether conversation is pinned." }
+      },
+      "required": ["id", "userId", "title", "createdAt", "updatedAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User profile document."
+    },
+    "/users/{userId}/conversations/{conversationId}": {
+      "schema": "Conversation",
+      "description": "Individual conversation belonging to the user."
+    }
+  }
+}
